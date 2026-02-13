@@ -1,6 +1,6 @@
 
 (function(){
-  const destination = "index.html";
+  const destination = "home.html";
   const sentinel = document.getElementById("sentinel");
   const ring = document.querySelector(".progress__ring");
   const label = document.querySelector(".progress__label");
