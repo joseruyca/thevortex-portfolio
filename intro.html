@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Intro — TheVortex Estudio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="assets/css/intro.css">
+</head>
+<body>
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-btn="en">EN</button>
+    <button type="button" data-lang-btn="es">ES</button>
+  </div>
+  <img class="logo" src="assets/img/wordmark.svg" alt="TheVortex Estudio">
+  <header class="content fluid" style="--count: 7">
+    <section class="content">
+      <h1>
+        <span class="intro-prefix" data-i18n="intro.prefix" aria-hidden="true">Designing</span>
+       
+      </h1>
+      <ul aria-hidden="true">
+        <li style="--i:0" data-i18n="intro.item.logos">logos.</li>
+        <li style="--i:1" data-i18n="intro.item.identities">identidades.</li>
+        <li style="--i:2" data-i18n="intro.item.systems">sistemas.</li>
+        <li style="--i:3" data-i18n="intro.item.wordmarks" data-i18n="intro.item.wordmarks">wordmarks.</li>
+        <li style="--i:4" data-i18n="intro.item.monograms">monogramas.</li>
+        <li style="--i:5">guías.</li>
+        <li style="--i:6">marcas.</li>
+      </ul>
+    </section>
+  </header>
+
+  <main>
+    <section>
+      <p class="stagecopy" data-i18n="intro.stagecopy">Minimal with character. Built for motion, web and print.</p>
+    </section>
+  </main>
+
+  <div class="scroll-indicator" aria-hidden="true">
+    <div class="chevron"></div>
+    <div data-i18n="intro.scroll">Scroll</div>
+  </div>
+
+  <div id="sentinel" class="sentinel" aria-hidden="true">
+    <div class="progress">
+      <div class="progress__ring"></div>
+      <div class="progress__label">0%</div>
+    </div>
+  </div>
+
+  <script src="assets/js/intro.js"></script>
+<script src="assets/js/i18n.js"></script>
+</body>
+</html>

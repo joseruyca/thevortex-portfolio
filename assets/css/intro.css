@@ -1,0 +1,86 @@
+
+@import url('https://unpkg.com/normalize.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Fraunces:opsz,wght@9..144,900&display=swap');
+
+:root{
+  --bg:#171818; --ink:#ECECEC; --rule:#2a2a2a; --brand:#0A8DC1;
+  --start: 48vh; --space: 52vh;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+html{color-scheme:dark}
+body{margin:0; min-height:100dvh; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:var(--bg); color:var(--ink)}
+
+body::before{
+  --size:45px; --line: color-mix(in hsl, var(--ink), transparent 85%);
+  content:''; position:fixed; inset:0; z-index:-1;
+  background:
+    linear-gradient(90deg,var(--line) 1px,transparent 1px var(--size)) calc(var(--size)*0.36) 50%/var(--size) var(--size),
+    linear-gradient(var(--line) 1px,transparent 1px var(--size)) 0 calc(var(--size)*0.32)/var(--size) var(--size);
+  mask: linear-gradient(-20deg, transparent 50%, white);
+}
+
+header.content{ position:sticky; top: calc((var(--count) - 1) * -1lh); line-height:1.02; width:100%; margin-bottom: var(--space); }
+header section.content{ display:flex; width:100%; align-items:start; justify-content:center; padding-top: calc(var(--start)); }
+h1{ position:sticky; top: var(--start); font-size: clamp(36px, 3.5vw, 56px); font-weight:900; font-family:Fraunces, serif; margin:0 }
+ul{ list-style:none; margin:0; padding:0; font-weight:900; letter-spacing:-.02em }
+li{
+  font-size: clamp(64px, 15vw, 220px); line-height:.9; text-transform: lowercase;
+  --dimmed: color-mix(in oklch, var(--ink), #0000 80%);
+  background:
+    linear-gradient(180deg,
+      var(--dimmed) 0 calc(var(--start) - 0.5lh),
+      var(--brand) calc(var(--start) - 0.55lh) calc(var(--start) + 0.55lh),
+      var(--dimmed) calc(var(--start) + 0.5lh)
+    );
+  background-attachment: fixed; color:#0000; background-clip:text;
+}
+
+main{ width:100%; height:100vh; display:grid; place-items:center; position:relative; }
+.stagecopy{ font-weight:800; letter-spacing:.2px; color: color-mix(in oklch, var(--ink), #0000 20%); }
+
+/* Scroll indicator */
+.scroll-indicator{ position:fixed; left:50%; bottom:24px; translate:-50% 0; display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.2px; color: color-mix(in oklch, var(--ink), #0000 20%); text-transform:uppercase; }
+.chevron{ width:16px; height:24px; border-left:2px solid currentColor; border-bottom:2px solid currentColor; transform: rotate(-45deg); animation: bob 1.2s ease-in-out infinite; }
+@keyframes bob{ 0%,100%{ transform: translateY(0) rotate(-45deg); opacity:.9 } 50%{ transform: translateY(6px) rotate(-45deg); opacity:.6 } }
+
+.logo{ position:fixed; top:18px; left:18px; width:200px; opacity:.92; pointer-events:none }
+
+/* Bottom sentinel + dwell progress */
+.sentinel{ height: 26vh; display:grid; place-items:center; }
+.progress{ width:96px; height:96px; border:2px solid var(--rule); border-radius:999px; position:relative; }
+.progress__ring{ position:absolute; inset:0; border-radius:999px; border:4px solid var(--brand); clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 0); transform: rotate(-90deg); transform-origin: 50% 50%; }
+.progress__label{ position:absolute; inset:0; display:grid; place-items:center; font-weight:900; font-size:12px; color:var(--ink) }
+
+@media (max-width:740px){
+  header section.content{ justify-content:flex-start; padding-left:20px; padding-right:20px }
+  .logo{ width:170px }
+  .scroll-indicator{ bottom:14px }
+}
+
+
+/* i18n toggle */
+.lang-toggle{
+  position:fixed; top:18px; right:18px; z-index:50;
+  display:flex; gap:6px; padding:6px; border-radius:999px;
+  background:rgba(15,16,17,.55); border:1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(10px);
+}
+.lang-toggle button{
+  appearance:none; border:0; background:transparent; color:rgba(255,255,255,.72);
+  font:600 12px/1 system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  padding:8px 10px; border-radius:999px; cursor:pointer;
+}
+.lang-toggle button.is-active{ background:rgba(255,255,255,.10); color:#fff; }
+.lang-toggle button:focus-visible{ outline:2px solid rgba(255,255,255,.35); outline-offset:2px; }
+
+/* make the prefix smaller & spaced */
+.intro-prefix{
+  display:inline-block;
+  font-size: clamp(22px, 2.2vw, 34px);
+  font-weight: 700;
+  opacity:.95;
+  margin-right: 14px;
+  transform: translateY(-.06em);
+}

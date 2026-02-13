@@ -1,0 +1,12 @@
+
+/* Minimal polish for Works (keeps your layout intact) */
+.dir > h2{display:flex;align-items:center;gap:.6rem}
+.dir > h2::after{content:'';flex:1;border-top:2px solid var(--rule,#2b2f31);opacity:.6}
+.grid{--gap:14px; gap:var(--gap)}
+.card{cursor:pointer; transform:translateY(6px) scale(.985); opacity:0; transition:transform .28s cubic-bezier(.2,.6,.2,1), box-shadow .28s ease, opacity .35s ease}
+.card.is-in{opacity:1; transform:translateY(0) scale(1)}
+.card:focus-within,.card:focus,.card:hover{transform:translateY(-2px) scale(1.01)}
+.card img{aspect-ratio:16/10; object-fit:cover; border:2px solid var(--rule,#2b2f31)}
+.bar{backdrop-filter:saturate(140%)}
+:where(button, a, .card):focus-visible{ outline:3px solid #0A8DC1; outline-offset:3px }
+@media (prefers-reduced-motion: reduce){ *{ animation:none!important; transition:none!important } }

@@ -1,0 +1,28 @@
+:root{--w-bg:#111314;--w-ink:#F5F7F8;--w-muted:#8E9CA3;--w-rule:#23282b;--w-brand:#0A8DC1;--w-card:#0b0d0e;--w-ease:cubic-bezier(.22,.7,.24,1)}
+.works-wrap{padding:24px 0 64px}
+.works-hero{border-bottom:1px solid var(--w-rule);padding:18px 0 16px}
+.works-hero h1{font:900 clamp(34px,6vw,64px)/.95 Inter,system-ui,sans-serif;margin:0 0 .55rem;letter-spacing:-.02em}
+.works-hero p{color:var(--w-muted);margin:0;font-size:14px}
+.works-hero p span{color:var(--w-brand);font-weight:700}
+.works-toolbar{display:flex;align-items:center;gap:10px;margin:16px 0 10px;flex-wrap:wrap}
+.works-search{flex:1;min-width:220px;display:flex;align-items:center;gap:8px;border:1px solid var(--w-rule);padding:8px 12px;border-radius:999px;font-size:13px;background:rgba(5,6,7,.55)}
+.works-search input{flex:1;background:transparent;border:0;outline:0;color:var(--w-ink);font-weight:500}
+.works-chips{display:flex;gap:6px;flex-wrap:wrap}
+.works-chip{border-radius:999px;border:1px solid var(--w-rule);padding:6px 10px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;background:#050607;transition:all .16s var(--w-ease)}
+.works-chip[aria-pressed="true"]{background:var(--w-brand);border-color:#0b5d81;color:#021017}
+.works-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin:18px 0 40px}
+.works-card{border-radius:14px;border:1px solid var(--w-rule);background:var(--w-card);overflow:hidden;cursor:pointer;display:flex;flex-direction:column;transition:transform .18s var(--w-ease),box-shadow .18s var(--w-ease),border-color .18s var(--w-ease)}
+.works-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(0,0,0,.35);border-color:#355057}
+.works-cover{position:relative;background:#050607;overflow:hidden}
+.works-cover img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;transform-origin:center;transition:transform .45s var(--w-ease),opacity .25s var(--w-ease)}
+.works-card:hover .works-cover img{transform:scale(1.04)}
+.works-badge{position:absolute;left:10px;top:10px;background:linear-gradient(180deg,var(--w-brand),#064d6d);padding:.38rem .62rem;border-radius:.7rem;font:900 11px/1 Inter,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.works-open{position:absolute;right:10px;bottom:10px;background:#05090c;color:#c0e7ff;border-radius:999px;padding:.34rem .72rem;border:1px solid #07405a;font:900 11px/1 Inter,system-ui,sans-serif;letter-spacing:.04em;opacity:0;transform:translateY(6px);transition:all .18s var(--w-ease)}
+.works-card:hover .works-open{opacity:.92;transform:translateY(0)}
+.works-meta{display:flex;justify-content:space-between;align-items:flex-end;padding:12px 12px 12px}
+.works-title{font:900 15px/1.1 Inter,system-ui,sans-serif;letter-spacing:.02em}
+.works-year{color:var(--w-muted);font-size:12px;font-weight:700}
+.works-empty{color:var(--w-muted);text-align:center;padding:40px 0;font-size:14px}
+.works-footer{border-top:1px solid var(--w-rule);padding:12px 0 18px;margin-top:24px;display:flex;justify-content:center;font-size:12px;color:var(--w-muted)}
+:where(button,a,.works-card):focus-visible{outline:3px solid var(--w-brand);outline-offset:3px}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
